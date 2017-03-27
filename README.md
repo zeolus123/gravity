@@ -35,4 +35,4 @@ constant value for *g* in its constructor.
 
 5. Modify the provided main routine as follows:
   * it initializes a **SimplePendulum** and a **RegularPendulum** with a **GravityConstant** object.
-  * let the pendulums swing for a little while, then assign a different **GravityConstant** object. For example, your first **GravityConstant** could represent the Earth’s gravitational field (9.81 m/s^2), and the second could represent Jupiter’s (25 m/s^2). Push your code to the remote branch "RefactoringStep3".
+  * let the pendulums swing for a little while, then assign a different **GravityConstant** object. For example, your first **GravityConstant** could represent the Earth’s gravitational field (9.81 m/s<sup>2</sup>), and the second could represent Jupiter’s (25 m/s<sup>2</sup>). Push your code to the remote branch "RefactoringStep3".
