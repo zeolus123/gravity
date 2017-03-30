@@ -8,20 +8,17 @@ import java.text.NumberFormat;
  */
 public class PendulumRunner {
 
-	public static final double GRAVITY = 9.80665;
-	
     public static void main (String [] args) {
 	NumberFormat nf = NumberFormat.getInstance ();
 	nf.setMaximumFractionDigits (3);
 
 	double delta = (args.length == 0) ? .1 : Double.parseDouble (args[0]);
 	double sLen = 10, pMass = 10, theta0 = Math.PI/30;
+	GravityConstant earth = new GravityConstant(9.80665);
 	
-	
-	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta, GRAVITY);
-	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, GRAVITY);
-	RegularPendulum rpCoarse = 
-	    new RegularPendulum (sLen, pMass, theta0, .1, GRAVITY);
+	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, earth, delta);
+	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, earth);
+	RegularPendulum rpCoarse = new RegularPendulum (sLen, pMass, theta0, earth, .1);
 
 	// print out difference in displacement in 1 second intervals
 	// for 20 seconds
@@ -39,4 +36,3 @@ public class PendulumRunner {
 	}
     }
 }
-
